@@ -1,0 +1,155 @@
+h1{
+  color : black;
+  text-align: center;
+  font-family: 'Sofia', cursive;
+  font-size: 50px;
+  margin: 0px;
+  padding: 50px;
+}
+/* pink color: FFB4B4 */
+#header1{
+  color : black;
+  text-align: left;
+  /* font-size: 40px; */
+}
+  /* text-decoration: underline; */
+
+#header {
+  color: white;
+  text-align: left;
+  font-family: 'Poiret One';
+  font-size: 100px;
+}
+
+header {
+  background-color: #FFB4B4;
+}
+
+#list{
+  font-family: 'Poiret One', cursive;
+  padding-left: 40px;
+  padding-right: 40px;
+  /* font-size: 25px; */
+  /* i think padding is the space between lines */
+}
+
+ul{
+  font-size: 12px;
+  list-style-type: none;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Sofia', cursive;
+}
+
+/* Style tab links */
+/* Style tab links */
+.tablink {
+  background-color: black;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 30px;
+  width: 33.33333333333333333333333333%;
+  font-family: 'Poiret One', cursive;
+}
+
+.tablink:hover {
+  background-color: #C0BEBF;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px 20px;
+  height: 100%;
+  font-size: 40px;
+  font-family: 'Poiret One', cursive;
+  /* text-align: center; */
+}
+
+
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 75%;
+  width: 150px;
+  position: static;
+  z-index: 1;
+  top: .5;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.parallax {
+  background-image: url("clouds.jpg");
+  min-height: 300px;
+  margin-bottom: 50px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 50px 50px;
+}
+.pad{
+  margin-left: 40px;
+}
+.margin{
+  margin-right: 40px;
+}
+.pad2{
+  padding-left: 10px;
+}
+#imagesMain {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+.center{
+  text-align: center;
+}
+#Home {background-color: white;}
+#News {background-color: white;}
+#Contact {background-color: white;}
+/* #About {background-color: #FFCCCC;} */
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
