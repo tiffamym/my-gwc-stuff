@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <!-- <link rel="stylesheet" href= "ahhhh.css"> -->
+    <link rel="stylesheet" href= "thecss.css">
+    <link href="https://fonts.googleapis.com/css?family=Sofia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- jquery library in Google API -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="thejs.js"></script>
+
+
+  </head>
+  <header><h1>A Taste of the Bay</h1></header>
+
+  <style>
+  * {box-sizing: border-box}
+  body, html {
+    height: 125%;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Style tab links */
+  /* .tablink {
+    background-color: white;
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 25%;
+    font-family: 'Playfair Display serif';
+  }
+
+  .tablink:hover {
+    background-color: #C0BEBF;
+  }
+
+  /* Style the tab content (and add height:100% for full page content) */
+  /* .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  #Home {background-color: #7EF0EB;}
+  #News {background-color: #C77EF0;}
+  #Contact {background-color: #7EF0B3;}
+  #About {background-color: #F7A8D4;} */
+  /* controls the tab color */
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sofia&display=swap" rel="stylesheet">
+
+  <button class="tablink" onclick="openPage('Home', this, 'black')" id="defaultOpen"><strong>Home</strong></button>
+  <button class="tablink" onclick="openPage('News', this, 'black')" ><strong>Find Food</strong></button>
+  <button class="tablink" onclick="openPage('Contact', this, 'black')"><strong>About Us</strong></button>
+<!-- controls the page color -->
+  <!-- <button class="tablink" onclick="openPage('About', this, '#F7A8D4')">Contact</button> -->
+<!-- #8FF6F1 -->
+  <div id="Home" class="tabcontent">
+     <h3 id = "header1" class = "pad2"><marquee behavior="slide" direction="left" scrollamount="50">Our Mission</marquee></h3>
+<!-- can change strong depending on font -->
+    <strong><h5 id = "list" class = "center"><div class = "parallax">Our mission is to create a platform in which users can easily find a location in the Bay Area to eat. Whether it’s a full-course meal, dessert, drink, or even a quick snack, you can find it all here. Users can filter the type of cuisine they want, the specific city, and dietary restrictions in order to get personalized results.</div></h5></strong>
+    <p>Our Favorites</p>
+    <div id = "imagesMain">
+      <img class = "pad" src= "bobaguys.jpeg" width ="222" length = "1308"></img>
+      <img src= "nickthegreek.jpeg" width = "222" length = "1308"></img>
+      <img src= "milkbomb.jpeg" width = "222" length = "1308"></img>
+      <img class = "margin" src= "hellokitty.jpeg" width = "222" length = "1308"></img>
+    <!-- <img src= "nom.jpg" width = "222" length = "1308"></img> -->
+    </div>
+  </div>
+<body>
+  <div id="News" class="filtertab">
+    <div> <h2 id = "header1">Find Food</h2></div>
+  <div class="main" style="color: black;" id="results"></div>
+    <ul> <!-- everything in this unsorted list will get affected by the class: .list  -->
+        <div class="sidenav">
+        <!-- <h2 id = "header">Locations</h2> -->
+          <!-- <ul class="mobile-product-filters vertical menu show-for-small-only" data-accordion-menu>
+           <li> -->
+             <!-- <a href="#"><h2>Filter By</h2></a> -->
+             <!-- <ul class="vertical menu" data-accordion-menu> -->
+              <!-- <li class="product-filters-tab"> -->
+                <a href="#">Locations</a>
+                <!-- <ul class="categories-menu menu vertical nested is-active"> -->
+                   <!-- <a href="#" class="clear-all" id="category-clear-all">Clear All</a> -->
+                   <input name="San_Francisco" type="checkbox" value="San_Francisco">San Francisco<br>
+                   <input name="Daly_City" type="checkbox" value="Daly_City">Daly City<br>
+                   <input name="Burlingame" type="checkbox" value="Burlingame">Burlingame<br>
+                   <input name="Millbrae" type="checkbox" value="Millbrae">Millbrae<br>
+                   <input name="San_Bruno" type="checkbox" value="San_Bruno">San Bruno<br>
+                   <input name="Redwood_City" type="checkbox" value="Redwood_City">Redwood City<br>
+                   <input name="Palo_Alto" type="checkbox" value="Palo_Alto">Palo Alto<br>
+                   <input name="Sunnyvale" type="checkbox" value="Sunnyvale">Sunnyvale<br>
+                   <input name="San_Jose" type="checkbox" value="San_Jose">San Jose<br>
+
+                 <!-- </ul>
+             </li>
+             <li class="product-filters-tab"> -->
+                <a href="#">Cuisine</a>
+                <!-- <ul class="categories-menu menu vertical nested is-active"> -->
+                  <!-- <a href="#" class="clear-all" id="size-clear-all">Clear All</a> -->
+                  <input name="boba" type="checkbox" value="boba">Boba<br>
+                  <input name="desserts" type="checkbox" value="desserts">Desserts<br>
+                  <input name="casual_dining" type="checkbox" value="casual_dining">Casual Dining<br>
+                <!-- </ul>
+
+              </li> -->
+             <!-- <li class="product-filters-tab"> -->
+                <a href="#">Other</a>
+                <!-- <ul class="categories-menu menu vertical nested"> -->
+                  <!-- <a href="#" class="clear-all" id="color-clear-all">Clear All</a> -->
+                  <input name="vegetarian" type="checkbox" value="vegetarian">Vegetarian<br>
+                  <input name="healthy_food" type="checkbox" value="healthy_food">Healthy Food<br>
+                <!-- </ul>
+              </li>
+             <li class="product-filters-tab"> -->
+                <a href="#">Rating</a>
+                <!-- <ul class="categories-menu menu vertical nested"> -->
+                  <!-- <a href="#" class="clear-all" id="price-clear-all">Clear All</a> -->
+                  <input name="five_stars" type="checkbox" value="five_stars">&#9734;&#9734;&#9734;&#9734;&#9734;<br>
+                  <input name="four_stars" type="checkbox" value="four_stars">&#9734;&#9734;&#9734;&#9734;<br>
+                  <input name="three_stars" type="checkbox" value="three_stars">&#9734;&#9734;&#9734;<br>
+                  <input name="two_stars" type="checkbox" value="two_stars">&#9734;&#9734;<br>
+                  <input name="one_star" type="checkbox" value="one_star">&#9734;<br>
+                <!-- </ul>
+              </li>
+             </ul> -->
+           <!-- </li>
+         </ul> -->
+    </div>
+
+    <div id="Contact" class="tabcontent">
+    <div><h2 id = "header1">Contact Us</h2></div>
+    <ul>
+      <li> <h5 id = "list"><strong>I only eat shrimp and fish when it’s made certain ways</h5></strong></li>
+      <img src= "IMG_5130.JPG" width="224" height="232" rotate = "90"></img>
+      <li> <h5 id = "list"><strong>Snakes</h5></strong></li>
+    </ul>
+  </div>
+
+  <div id="Contact" class="tabcontent">
+    <div><h2 id = "header1">Contact Us</h2></div>
+
+      <h5 id = "list"><strong></h5></strong>
+      <!-- <div class="flip-card" class="flip-card-inner">
+        <div class="flip-card-front"> -->
+          <img src= "ava.JPG" width="224" height="224"></img>
+        <!-- </div>
+        <div class="flip-card-back">
+          <h2>Ava Rebollido</h2>
+      </div> -->
+          <img src= "claire.jpg" width="224" height="224"></img>
+          <img src= "marina.jpg" width="224" height="224"></img>
+          <img src= "shania.JPG" width="224" height="224"></img>
+          <img src= "tiffany.jpg" width="224" height="224"></img>
+      <h5 id = "list"><strong></h5></strong>
+  </div>
+
+
+  <!-- <div id="About" class="tabcontent">
+    <div id = "header1">Contact Me</div>
+    <p id = "list"><strong>Click on any of the icons below</strong></p> -->
+    <!-- <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-snapchat-ghost"></a>
+    <style>
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 30px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa-facebook {
+      background: #3B5998;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #55ACEE;
+      color: white;
+    }
+
+    .fa-google {
+      background: #dd4b39;
+      color: white;
+    }
+
+    .fa-linkedin {
+      background: #007bb5;
+      color: white;
+    }
+
+    .fa-youtube {
+      background: #bb0000;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: #125688;
+      color: white;
+    }
+
+    .fa-snapchat-ghost {
+      background: #fffc00;
+      color: white;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    </style>
+  </div> -->
+
+  <script>
+  function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      // i ++ also is i +=1
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+<!--
+      <a href="http://4.bp.blogspot.com/_B5E5HPIKKBY/TCgENnaXouI/AAAAAAAAAZs/JHip18_p03M/s320/Screen+shot+2010-06-27+at+10.08.28+PM.png">Click Here</a> -->
+  </body>
+</html>
